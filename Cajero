@@ -1,0 +1,48 @@
+package cajeroautomatico;
+
+public class Cajero {
+    private static int saldo = 5000;
+    private static int retirar=0;
+
+   public Cajero (int saldo, int retirar){
+       this.saldo=saldo;
+       this.retirar=retirar;
+   }
+    public void setSaldo(int saldo) {
+        this.saldo = saldo;
+    }
+
+    public void setRetirar(int retirar) {
+        this.retirar = retirar;
+    }
+
+    public int getSaldo() {
+        return saldo;
+    }
+
+    public double getRetirar() {
+        return retirar;
+    }
+
+    public static void retirarSaldo() {
+
+        if (saldo >= retirar) {
+            saldo = saldo - retirar;
+            System.out.println("\n**Dinero retirado exitosamente**");
+
+        }else{
+            System.out.println("\n**Dinero insuficiente para esta operación**");
+        }
+    }
+
+    public static void consultarSaldo(){
+        System.out.println("Saldo: "+saldo);
+
+    }
+    public  static void salir(){
+        System.out.println("Gracias por utilizar");
+        System.exit(0);
+    }
+
+
+}
