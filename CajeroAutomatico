@@ -1,0 +1,63 @@
+package cajeroautomatico;
+/*un banco quiere crear un programa para manejar sus cajeros automáticos.
+  Dicho programa sólo debe permitir retirar dinero y consultar el saldo de una cuenta.
+  Identifique y discuta los aspectos que constituyen el problema. Si el enunciado no es
+  explícito con respecto a algún punto, intente imaginar la manera de completarlo.
+
+ */
+import  java.util.Scanner;
+
+public class CajeroAutomatico {
+    static int saldo = 5000, retirar=0;
+    //static =accesible a nivel de Clase y no necesita una instancia de ella para ser usada
+    static Scanner entrada = new Scanner (System.in);
+
+    public static void main(String[] args) {
+        System.out.println("INGRESE LA CANTIDAD DE CUANTO VA A RETIRAR: ");
+        retirar= entrada.nextInt();
+        a1.setRetirar(retirar);
+
+        int opc;
+        do {
+            opc = menu();
+            switch(opc){
+                case 1:
+
+                    a1.retirarSaldo();
+                    break;
+                case 2:
+                   a1.consultarSaldo();
+                    break;
+
+
+                default:
+                    a1.salir();
+            }
+        }while(opc !=3);
+        //Cajero a1= new Cajero( saldo, retirar);
+
+    }
+    static Cajero a1= new Cajero (saldo, retirar);
+
+
+
+
+
+    public static int menu(){
+        int opc = 0;
+        System.out.println("Bienvenido al cajero automático");
+        System.out.println("");
+        System.out.println("1 para retirar su saldo");
+        System.out.println("2 para consultar su saldo");
+        System.out.println("3 para salir ");
+
+        System.out.println("");
+        System.out.println("Por favor seleccione la operación que desea realizar: ");
+        opc = entrada.nextInt();
+        return opc;
+    }
+
+
+
+
+}
